@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="inputa">
+	<select name="" id="select">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">*</option>
+	<option value="/">/</option>
+	</select>
+	<input type="text" id="inputb">
+	<input type="button" id="yunsuan" value="=">
+	<input type="text" id="inputc">
+	<script>
+	var ys=document.getElementById('yunsuan');
+	ys.onclick=function(){
+	var a=parseInt(document.getElementById('inputa').value);
+	var fh=document.getElementById('select').value;
+	var b=parseInt(document.getElementById('inputb').value);
+	var jg;
+    if(fh=='+'){
+    	jg= a+b;
+    }else if(fh=='-'){
+    	jg= a-b;
+    }else if(fh=='*'){
+    	jg= a*b;
+    }else if(fh=='/'&&b!=0){
+    	jg= a/b;
+	}else{
+    	jg='b不能为0';
+    }
+    if(isNaN(a)||isNaN(b)){
+   	jg='错误';
+   }
+    document.getElementById("inputc").value = jg;
+    }
+	</script>
+</body>
+</html>
