@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.tabs_box {
+		width: 500px;
+	}
+	.tabs {
+		display: flex; /*横向排列*/
+	}
+	#tabs {
+		width: 1500px;
+		border: 1px solid;
+		display: flex;
+		justify-content: space-between;
+	}
+	.tabs li {
+		padding: 10px;
+		padding-left: 28px;
+		font-size: 18px;
+		background: url('images/icon1.png') no-repeat 10px;
+	}
+	.tabs .cur {
+		color: #046fbb;
+	}
+	.contents div {
+		height: 200px;
+		font-size: 14px;
+		line-height: 1.5;
+		display: none;
+	}
+	.contents .show {
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<div id="tabs">
+	<div id="tabs1" class="tabs_box">
+	<ul class="tabs">
+		<li class="cur">学院新闻</li>
+		<li>通知公告</li>
+		<li>学术动态</li>
+	</ul>
+	<div class="contents">
+	<div class="show">学院新闻的内容：Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi sequi nostrum dolorum cupiditate ratione architecto fuga! Sunt voluptatum dolorem adipisci neque est facilis, corporis earum exercitationem, non, nostrum blanditiis.</div>
+	<div>通知公告的内容：Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi ipsam autem, saepe atque, adipisci soluta, facere officia distinctio provident odio temporibus recusandae unde laborum. Ex tenetur velit reiciendis, veniam officia.</div>
+	<div>学术动态的内容：Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente doloremque nostrum, fuga aperiam enim veniam delectus quisquam, quae, iure sequi nisi! Id maiores dolores rem ipsum libero porro, quibusdam, non.</div>
+	</div>
+	</div>
+	<div id="tabs2" class="tabs_box">
+	<ul class="tabs">
+		<li class="cur">国内新闻</li>
+		<li>军事新闻</li>
+		<li>国外新闻</li>
+	</ul>
+	<div class="contents">
+	<div class="show">国内新闻：香港开枪制服暴徒的警员被人“起底”，暴徒又叫嚣“祸必及妻儿”。谁在守护香港，谁在胡作非为，黑白早已分明，铁证不容篡改。香港警察是止暴制乱的第一力量，已经展现极大的克制。暴力恐吓，吓不倒正义之师。港警这道防线，绝不会因仇视和诋毁而垮。阿Sir放心，14亿同胞挺你！</div>
+	<div>军事新闻：日前，伊朗武装部队总参谋长穆罕默德·巴盖里少将视察了唯一伊朗首都德黑兰附近的沙希德·赞哈兰陆军维修和现代化升级中心。该中心负责维修和升级伊朗陆军使用的多款地面装备。在视察期间，工厂展示了各种维修和现代化设备的样品，其中包括多管火箭炮、伊朗升级的BTR-60PB装甲车、伊朗自行升级的英制“酋长”主战坦克的升级版以及155毫米M109自行榴弹炮等武器。</div>
+	<div>国外新闻：当地时间11月10日，津巴布韦动物保护区，一头垂死的大象卧倒遭在地上。据报道，当地时间11日，津巴布韦野生动物管理当局表示，他们将迁移数百头大象及其他野生动物，以避免它们死于致命干旱。过去2个月来，津巴布韦历经了史上最严重旱灾之一，目前至少有120头大象死亡。</div>
+	</div>
+	</div>
+	<div id="tabs3" class="tabs_box">
+	<ul class="tabs">
+		<li class="cur">学院新闻</li>
+		<li>通知公告</li>
+		<li>学术动态</li>
+	</ul>
+	<div class="contents">
+	<div class="show">xxx新闻的内容：11月10日至12日，习近平主席对希腊进行国事访问。这是今年我国元首对欧洲方向的又一次重要访问
+   爱琴海岸，中希两个文明古国携手对话，意义重大。相知相亲，千年文明鉴未来</div>
+	<div>xxx的内容：新京报快讯 11月13日，曾流失海外的圆明园马首铜像被捐赠给国家文物局，未来将划拨北京市圆明园管理处收藏，成为首只回归圆明园的兽首。</div>
+	<div>xxx的内容：11月13日，在第五届世界浙商大会上，马云表示今年双十一未达到自己预期：一是因为天气太热了，服装卖不动；二是因为今年双十一在周一，大家不能熬夜，希望未来国家能给双十一放半天假。</div>
+	</div>
+	</div>
+	</div>
+	<script>
+	// 选项卡：点击每个选项，被点击的选项具有特殊样式，其他选项样式恢复正常，被点击的选项对应的选项内容显示，其他选项内容不显示
+	// 获取选项卡容器
+	function tab(id){
+			var box=document.getElementById(id);
+			// 获取所有选项
+			var ul=box.getElementsByClassName('tabs')[0];
+			var lis=ul.getElementsByTagName('li');
+			// 获取所有选项内容
+			var div=box.getElementsByClassName('contents')[0];
+			var divs=div.getElementsByTagName('div');
+			// 给每个选项绑定点击事件,所有选项样式恢复正常，被点击的选项具有特殊样式
+			for(var i=0;i<lis.length;i++){
+				lis[i].index=i;
+				// 给每个选项绑定点击事件
+				lis[i].onclick=function(){
+		// 所有选项设置index属性，保存选项的索引序号
+					// 所有选项样式恢复正常
+					for(var i=0;i<lis.length;i++){
+						// lis[i].className=''; // class值设置为空，没有去掉class属性
+						lis[i].removeAttribute('class'); // 去掉class属性
+					}
+					// 所有选项内容不显示
+					for(var i=0;i<divs.length;i++){
+						divs[i].removeAttribute('class'); // 去掉class属性
+					}
+					this.className='cur'; // 被点击的选项具有特殊样式
+					divs[this.index].className='show'; // 被点击的选项对应的选项内容显示
+				}
+			}
+	}
+	tab('tabs1');
+	tab('tabs2');
+	tab('tabs3');
+	</script>
+</body>
+</html>
