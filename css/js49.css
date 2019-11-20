@@ -1,0 +1,38 @@
+.ctboxs{
+	width: 590px;
+	height: 715px;
+	position: relative;
+	overflow: hidden;
+	border: 5px solid orange;
+}
+.ctboxs .ctbox{
+	width: 590px;
+	height: 535px;
+	position: absolute;
+	top: 0;
+	transition: 1s linear;
+}
+.ctboxs .ct1{top: 0px}
+.ctboxs .ct2{top: 535px}
+.ctboxs .ct3{top: 595px}
+.ctboxs .ct4{top: 655px}
+.ctboxs .ctbox .title{
+	font-family: 宋体;
+	color: white;
+	font-size: 22px;
+	line-height: 36px;
+	padding: 15px 220px;
+	cursor: pointer;
+}
+.ctboxs .ct1 .title{
+	background: rgb(0,0,127);
+}
+.ctboxs .ct2 .title{
+	background: rgb(238,136,0);
+}
+.ctboxs .ct3 .title{
+	background: rgb(126,127,0);
+}
+.ctboxs .ct4 .title{
+	background: rgb(35,97,173);
+}
